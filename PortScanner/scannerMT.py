@@ -23,11 +23,13 @@ def scan_port(target, port):
 def main():
     target = input('Enter host for scanning: ')
     target_IP = socket.gethostbyname(target)
+    start_port = int(input('Start from which port? '))
+    end_port = int(input('End at which port? '))
     print('Starting scan on host: ', target_IP)
     
     threads = []  # List to hold our threads
 
-    for port in range(50, 500):
+    for port in range(start_port, end_port):
         # Create a thread for scanning each port
         thread = threading.Thread(target=scan_port, args=(target_IP, port))
         threads.append(thread)
