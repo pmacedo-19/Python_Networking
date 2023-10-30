@@ -25,7 +25,7 @@ def main():
     target_IP = socket.gethostbyname(target)
     start_port = int(input('Start from which port? '))
     end_port = int(input('End at which port? '))
-    print('Starting scan on host: ', target_IP)
+    print('Starting scan on host: ', target_IP, '(', start_port,'-', end_port, ')')
     
     threads = []  # List to hold our threads
 
